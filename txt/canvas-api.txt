@@ -1,0 +1,346 @@
+clearRect:  void ctx.clearRect(x, y, width, height);
+
+fillRect:  void ctx.fillRect(x, y, width, height);
+
+strokeRect:  void ctx.strokeRect(x, y, width, height);
+
+fillText:  CanvasRenderingContext2D.fillText(text, x, y [, maxWidth]);
+
+strokeText:  CanvasRenderingContext2D.strokeText(text, x, y [, maxWidth]);
+
+measureText:  ctx.measureText(text);
+
+lineWidth:  ctx.lineWidth = value;
+
+lineCap:  ctx.lineCap = "butt" || "round" || "square";
+
+lineJoin:  ctx.lineJoin = "bevel" || "round" || "miter";
+
+miterLimit:  ctx.miterLimit = value;
+
+getLineDash:  ctx.getLineDash();
+
+setLineDash:  ctx.setLineDash(segments);
+
+lineDashOffset:  ctx.lineDashOffset = value;
+
+font:  ctx.font = value;
+
+textAlign:  ctx.textAlign = "left" || "right" || "center" || "start" || "end";
+
+textBaseline:  ctx.textBaseline = "top" || "hanging" || "middle" || "alphabetic" || "ideographic" || "bottom";
+
+direction:  ctx.direction = "ltr" || "rtl" || "inherit";
+
+fillStyle:  ctx.fillStyle = color;
+fillStyle:  ctx.fillStyle = gradient;
+fillStyle:  ctx.fillStyle = pattern;
+
+strokeStyle:  ctx.strokeStyle = color;
+strokeStyle:  ctx.strokeStyle = gradient;
+strokeStyle:  ctx.strokeStyle = pattern;
+
+createLinearGradient:  CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);
+
+createRadialGradient:  CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+
+createPattern:  CanvasPattern ctx.createPattern(image, repetition);
+
+shadowBlur:  ctx.shadowBlur = level;
+
+shadowColor:  ctx.shadowColor = color;
+
+shadowOffsetX:  ctx.shadowOffsetX = offset;
+
+shadowOffsetY:  ctx.shadowOffsetY = offset;
+
+beginPath:  void ctx.beginPath();
+
+closePath:  void ctx.closePath();
+
+moveTo:  void ctx.moveTo(x, y);
+
+lineTo:  ctx.lineTo(x, y);
+
+bezierCurveTo:  void ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+
+quadraticCurveTo:  void ctx.quadraticCurveTo(cpx, cpy, x, y);
+
+arc:  void ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
+
+arcTo:  void ctx.arcTo(x1, y1, x2, y2, radius);
+
+ellipse:  void ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
+
+rect:  void ctx.rect(x, y, width, height);
+
+fill:  void ctx.fill([fillRule]);
+fill:  void ctx.fill(path [, fillRule]);
+
+stroke:  void ctx.stroke();
+stroke:  void ctx.stroke(path);
+
+drawFocusIfNeeded:  void ctx.drawFocusIfNeeded(element);
+drawFocusIfNeeded:  void ctx.drawFocusIfNeeded(path, element);
+
+scrollPathIntoView:  void ctx.scrollPathIntoView();
+scrollPathIntoView:  void ctx.scrollPathIntoView(path);
+
+clip:  void ctx.clip([fillRule]);
+clip:  void ctx.clip(path [, fillRule]);
+
+isPointInPath:  ctx.isPointInPath(x, y [, fillRule]);
+isPointInPath:  ctx.isPointInPath(path, x, y [, fillRule]);
+
+isPointInStroke:  ctx.isPointInStroke(x, y);
+isPointInStroke:  ctx.isPointInStroke(path, x, y);
+
+currentTransform:  ctx.currentTransform [= value];
+
+rotate:  void ctx.rotate(angle);
+
+scale:  void ctx.scale(x, y);
+
+translate:  void ctx.translate(x, y);
+
+transform:  void ctx.transform(a, b, c, d, e, f);
+
+setTransform:  void ctx.setTransform(a, b, c, d, e, f);
+
+resetTransform:  void ctx.resetTransform();
+
+globalAlpha:  ctx.globalAlpha = value;
+
+globalCompositeOperation:  ctx.globalCompositeOperation = type;
+
+drawImage:  void ctx.drawImage(image, dx, dy);
+drawImage:  void ctx.drawImage(image, dx, dy, dWidth, dHeight);
+drawImage:  void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+
+createImageData:  ImageData ctx.createImageData(width, height);
+createImageData:  ImageData ctx.createImageData(imagedata);
+
+getImageData:  ctx.getImageData(sx, sy, sw, sh);
+
+putImageData:  void ctx.putImageData(imageData, dx, dy);
+putImageData:  void ctx.putImageData(imageData, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
+
+imageSmoothingEnabled:  ctx.imageSmoothingEnabled = value;
+
+imageSmoothingQuality:  ctx.imageSmoothingQuality = "low" || "medium" || "high"
+
+save:  void ctx.save();
+
+restore:  void ctx.restore();
+
+canvas:  ctx.canvas;
+
+addHitRegion:  void ctx.addHitRegion(options);
+
+removeHitRegion:  void ctx.removeHitRegion(id);
+
+clearHitRegions:  void ctx.clearHitRegions();
+
+filter:  ctx.filter = "<filter-function1> [<filter-function2>] [<filter-functionN>]";
+filter:  ctx.filter = "none";
+
+shadowColor:  ctx.shadowColor = color;
+
+shadowBlur:  ctx.shadowBlur = level;
+
+globalAlpha:  ctx.globalAlpha = value;
+
+globalCompositeOperation:  ctx.globalCompositeOperation = type;
+
+lineWidth:  ctx.lineWidth = value;
+
+lineJoin:  ctx.lineJoin = "bevel" || "round" || "miter";
+
+lineCap:  ctx.lineCap = "butt" || "round" || "square";
+
+miterLimit:  ctx.miterLimit = value;
+
+strokeStyle:  ctx.strokeStyle = color;
+strokeStyle:  ctx.strokeStyle = gradient;
+strokeStyle:  ctx.strokeStyle = pattern;
+
+fillStyle:  ctx.fillStyle = color;
+fillStyle:  ctx.fillStyle = gradient;
+fillStyle:  ctx.fillStyle = pattern;
+
+shadowColor:  ctx.shadowColor = color;
+
+shadowBlur:  ctx.shadowBlur = level;
+
+getLineDash:  ctx.getLineDash();
+
+setLineDash:  ctx.setLineDash(segments);
+
+lineDashOffset:  ctx.lineDashOffset = value;
+
+imageSmoothingEnabled:  ctx.imageSmoothingEnabled = value;
+
+currentTransform:  ctx.currentTransform [= value];
+
+imageSmoothingEnabled:  ctx.imageSmoothingEnabled = value;
+
+font:  ctx.font = value;
+
+strokeText:  CanvasRenderingContext2D.strokeText(text, x, y [, maxWidth]);
+
+fillText:  CanvasRenderingContext2D.fillText(text, x, y [, maxWidth]);
+
+measureText:  ctx.measureText(text);
+
+drawWindow:  void ctx.drawWindow(window, x, y, w, h, bgColor [, flags]);
+
+canvas:  ctx.canvas;
+
+currentTransform:  ctx.currentTransform [= value];
+
+direction:  ctx.direction = "ltr" || "rtl" || "inherit";
+
+fillStyle:  ctx.fillStyle = color;
+fillStyle:  ctx.fillStyle = gradient;
+fillStyle:  ctx.fillStyle = pattern;
+
+filter:  ctx.filter = "<filter-function1> [<filter-function2>] [<filter-functionN>]";
+filter:  ctx.filter = "none";
+
+font:  ctx.font = value;
+
+globalAlpha:  ctx.globalAlpha = value;
+
+globalCompositeOperation:  ctx.globalCompositeOperation = type;
+
+imageSmoothingEnabled:  ctx.imageSmoothingEnabled = value;
+
+imageSmoothingQuality:  ctx.imageSmoothingQuality = "low" || "medium" || "high"
+
+lineCap:  ctx.lineCap = "butt" || "round" || "square";
+
+lineDashOffset:  ctx.lineDashOffset = value;
+
+lineJoin:  ctx.lineJoin = "bevel" || "round" || "miter";
+
+lineWidth:  ctx.lineWidth = value;
+
+miterLimit:  ctx.miterLimit = value;
+
+shadowBlur:  ctx.shadowBlur = level;
+
+shadowColor:  ctx.shadowColor = color;
+
+shadowOffsetX:  ctx.shadowOffsetX = offset;
+
+shadowOffsetY:  ctx.shadowOffsetY = offset;
+
+strokeStyle:  ctx.strokeStyle = color;
+strokeStyle:  ctx.strokeStyle = gradient;
+strokeStyle:  ctx.strokeStyle = pattern;
+
+textAlign:  ctx.textAlign = "left" || "right" || "center" || "start" || "end";
+
+textBaseline:  ctx.textBaseline = "top" || "hanging" || "middle" || "alphabetic" || "ideographic" || "bottom";
+
+addHitRegion:  void ctx.addHitRegion(options);
+
+arc:  void ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
+
+arcTo:  void ctx.arcTo(x1, y1, x2, y2, radius);
+
+beginPath:  void ctx.beginPath();
+
+bezierCurveTo:  void ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+
+clearHitRegions:  void ctx.clearHitRegions();
+
+clearRect:  void ctx.clearRect(x, y, width, height);
+
+clip:  void ctx.clip([fillRule]);
+clip:  void ctx.clip(path [, fillRule]);
+
+closePath:  void ctx.closePath();
+
+createImageData:  ImageData ctx.createImageData(width, height);
+createImageData:  ImageData ctx.createImageData(imagedata);
+
+createLinearGradient:  CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);
+
+createPattern:  CanvasPattern ctx.createPattern(image, repetition);
+
+createRadialGradient:  CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+
+drawFocusIfNeeded:  void ctx.drawFocusIfNeeded(element);
+drawFocusIfNeeded:  void ctx.drawFocusIfNeeded(path, element);
+
+drawImage:  void ctx.drawImage(image, dx, dy);
+drawImage:  void ctx.drawImage(image, dx, dy, dWidth, dHeight);
+drawImage:  void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+
+drawWidgetAsOnScreen:  void ctx.drawWidgetAsOnScreen(window);
+
+drawWindow:  void ctx.drawWindow(window, x, y, w, h, bgColor [, flags]);
+
+ellipse:  void ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
+
+fill:  void ctx.fill([fillRule]);
+fill:  void ctx.fill(path [, fillRule]);
+
+fillRect:  void ctx.fillRect(x, y, width, height);
+
+fillText:  CanvasRenderingContext2D.fillText(text, x, y [, maxWidth]);
+
+getImageData:  ctx.getImageData(sx, sy, sw, sh);
+
+getLineDash:  ctx.getLineDash();
+
+isPointInPath:  ctx.isPointInPath(x, y [, fillRule]);
+isPointInPath:  ctx.isPointInPath(path, x, y [, fillRule]);
+
+isPointInStroke:  ctx.isPointInStroke(x, y);
+isPointInStroke:  ctx.isPointInStroke(path, x, y);
+
+lineTo:  ctx.lineTo(x, y);
+
+measureText:  ctx.measureText(text);
+
+moveTo:  void ctx.moveTo(x, y);
+
+putImageData:  void ctx.putImageData(imageData, dx, dy);
+putImageData:  void ctx.putImageData(imageData, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
+
+quadraticCurveTo:  void ctx.quadraticCurveTo(cpx, cpy, x, y);
+
+rect:  void ctx.rect(x, y, width, height);
+
+removeHitRegion:  void ctx.removeHitRegion(id);
+
+resetTransform:  void ctx.resetTransform();
+
+restore:  void ctx.restore();
+
+rotate:  void ctx.rotate(angle);
+
+save:  void ctx.save();
+
+scale:  void ctx.scale(x, y);
+
+scrollPathIntoView:  void ctx.scrollPathIntoView();
+scrollPathIntoView:  void ctx.scrollPathIntoView(path);
+
+setLineDash:  ctx.setLineDash(segments);
+
+setTransform:  void ctx.setTransform(a, b, c, d, e, f);
+
+stroke:  void ctx.stroke();
+stroke:  void ctx.stroke(path);
+
+strokeRect:  void ctx.strokeRect(x, y, width, height);
+
+strokeText:  CanvasRenderingContext2D.strokeText(text, x, y [, maxWidth]);
+
+transform:  void ctx.transform(a, b, c, d, e, f);
+
+translate:  void ctx.translate(x, y);
+
