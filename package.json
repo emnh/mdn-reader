@@ -1,0 +1,26 @@
+{
+  "name": "mdn-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emnh/mdn-reader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emnh/mdn-reader/issues"
+  },
+  "homepage": "https://github.com/emnh/mdn-reader#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "node-html-parser": "^1.1.12",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "shelljs": "^0.8.3"
+  }
+}
