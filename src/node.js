@@ -6,32 +6,17 @@ const process = require('process');
 
 const request = require('request');
 const rp = require('request-promise');
-const base = 'https://developer.mozilla.org/';
-const relative = '/en-US/docs/Web/API/CanvasRenderingContext2D';
-const baseURL = base + relative;
 
 const cheerio = require('cheerio');
 
 const shell = require('shelljs');
-// 'https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D';
-
-// use a timeout value of 10 seconds
-const timeoutInMilliseconds = 10*1000;
-const opts = {
-  url: baseURL,
-  timeout: timeoutInMilliseconds
-};
-
-const docsDir = 'api';
-const pwd = process.cwd();
-const fpath = path.join(pwd, docsDir, path.basename(baseURL) + '.html');
 
 function getFile(url) {
   console.log("getFile", url);
   return rp(
     {
       url: url,
-      timeout: opts.timeout
+      timeout: 10*1000
     });
 }
 
@@ -47,7 +32,7 @@ async function extractSyntax(fpath, body) {
   console.log('');
 }
 
-async function doParse(body) {
+async function doParse(body, relative, base, pwd, docsDir, baseURL) {
   const root = parse(body);
 
   const a = root.querySelectorAll('a');
@@ -91,7 +76,7 @@ async function doParse(body) {
   }
 }
 
-async function main() {
+async function download(fpath, opts, relative, base, pwd, docsDir, baseURL) {
   if (!fs.existsSync(fpath)) {
 
     const body = await rp(opts);
@@ -103,8 +88,27 @@ async function main() {
 
   } else {
     const body = fs.readFileSync(fpath, 'utf8');
-    await doParse(body);
+    await doParse(body, relative, base, pwd, docsDir, baseURL);
   }
 }
 
-main();
+function main(relative) {
+  const base = 'https://developer.mozilla.org/';
+  const baseURL = base + relative;
+
+  // use a timeout value of 10 seconds
+  const timeoutInMilliseconds = 10*1000;
+  const opts = {
+    url: baseURL,
+    timeout: timeoutInMilliseconds
+  };
+
+  const docsDir = 'api';
+  const pwd = process.cwd();
+  const fpath = path.join(pwd, docsDir, path.basename(baseURL) + '.html');
+
+  download(fpath, opts, relative, base, pwd, docsDir, baseURL);
+}
+
+//main('/en-US/docs/Web/API/CanvasRenderingContext2D');
+main('/en-US/docs/Web/API/WebGLRenderingContext');
