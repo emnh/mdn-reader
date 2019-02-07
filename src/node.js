@@ -35,12 +35,16 @@ function getFile(url) {
     });
 }
 
-async function extractSyntax(body) {
+async function extractSyntax(fpath, body) {
   const root = cheerio.load(body);
 
   const syntax = root('.syntaxbox');
 
-  console.log(syntax.text().trim());
+  const lines = syntax.text().trim().split('\n');
+  const title = path.basename(fpath.replace('.html', '')) + ': ';
+
+  lines.map(x => console.log(title, x));
+  console.log('');
 }
 
 async function doParse(body) {
@@ -80,7 +84,7 @@ async function doParse(body) {
           body2 = body;
         }
 
-        extractSyntax(body2);
+        extractSyntax(fpath, body2);
       }
       k++;
     }
