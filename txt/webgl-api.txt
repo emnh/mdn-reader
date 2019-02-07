@@ -1,0 +1,655 @@
+canvas:  ctx.canvas;
+
+commit:  void WebGLRenderingContext.commit()
+
+drawingBufferWidth:  gl.drawingBufferWidth;
+
+drawingBufferHeight:  gl.drawingBufferHeight;
+
+getContextAttributes:  gl.getContextAttributes();
+
+isContextLost:  gl.isContextLost();
+
+scissor:  void gl.scissor(x, y, width, height);
+
+viewport:  void gl.viewport(x, y, width, height);
+
+activeTexture:  void gl.activeTexture(texture);
+
+blendColor:  void gl.blendColor(red, green, blue, alpha);
+
+blendEquation:  void gl.blendEquation(mode);
+
+blendEquationSeparate:  void gl.blendEquationSeparate(modeRGB, modeAlpha);
+
+blendFunc:  void gl.blendFunc(sfactor, dfactor);
+
+blendFuncSeparate:  void gl.blendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
+
+clearColor:  void gl.clearColor(red, green, blue, alpha);
+
+clearDepth:  void gl.clearDepth(depth);
+
+clearStencil:  void gl.clearStencil(s);
+
+colorMask:  void gl.colorMask(red, green, blue, alpha);
+
+cullFace:  void gl.cullFace(mode);
+
+depthFunc:  void gl.depthFunc(func);
+
+depthMask:  void gl.depthMask(flag);
+
+depthRange:  void gl.depthRange(zNear, zFar);
+
+disable:  void gl.disable(cap);
+
+enable:  void gl.enable(cap);
+
+frontFace:  void gl.frontFace(mode);
+
+getParameter:  any gl.getParameter(pname);
+
+getError:  GLenum gl.getError();
+
+hint:  void gl.hint(target, mode);
+
+isEnabled:  GLboolean gl.isEnabled(cap);
+
+lineWidth:  ctx.lineWidth = value;
+
+pixelStorei:  void gl.pixelStorei(pname, param);
+
+polygonOffset:  void gl.polygonOffset(factor, units);
+
+sampleCoverage:  void gl.sampleCoverage(value, invert);
+
+stencilFunc:  void gl.stencilFunc(func, ref, mask);
+
+stencilFuncSeparate:  void gl.stencilFuncSeparate(face, func, ref, mask);
+
+stencilMask:  void gl.stencilMask(mask);
+
+stencilMaskSeparate:  void gl.stencilMaskSeparate(face, mask);
+
+stencilOp:  void gl.stencilOp(fail, zfail, zpass);
+
+stencilOpSeparate:  void gl.stencilOpSeparate(face, fail, zfail, zpass);
+
+bindBuffer:  void gl.bindBuffer(target, buffer);
+
+bufferData:  // WebGL1: 
+bufferData:  void gl.bufferData(target, size, usage); 
+bufferData:  void gl.bufferData(target, ArrayBuffer? srcData, usage); 
+bufferData:  void gl.bufferData(target, ArrayBufferView srcData, usage); 
+bufferData:  
+bufferData:  // WebGL2: 
+bufferData:  void gl.bufferData(target, ArrayBufferView srcData, usage, srcOffset, length);
+
+bufferSubData:  // WebGL1: 
+bufferSubData:  void gl.bufferSubData(target, offset, ArrayBuffer srcData); 
+bufferSubData:  void gl.bufferSubData(target, offset, ArrayBufferView srcData); 
+bufferSubData:  
+bufferSubData:  // WebGL2: 
+bufferSubData:  void gl.bufferSubData(target, dstByteOffset, ArrayBufferView srcData, srcOffset, length);
+
+createBuffer:  WebGLBuffer gl.createBuffer();
+
+deleteBuffer:  void gl.deleteBuffer(buffer);
+
+getBufferParameter:  any gl.getBufferParameter(target, pname);
+
+isBuffer:  GLboolean gl.isBuffer(buffer);
+
+bindFramebuffer:  void gl.bindFramebuffer(target, framebuffer);
+
+checkFramebufferStatus:  GLenum gl.checkFramebufferStatus(target);
+
+createFramebuffer:  WebGLFramebuffer gl.createFramebuffer();
+
+deleteFramebuffer:  void gl.deleteFramebuffer(framebuffer);
+
+framebufferRenderbuffer:  void gl.framebufferRenderbuffer(target, attachment, renderbuffertarget, renderbuffer);
+
+framebufferTexture2D:  void gl.framebufferTexture2D(target, attachment, textarget, texture, level);
+
+getFramebufferAttachmentParameter:  any gl.getFramebufferAttachmentParameter(target, attachment, pname);
+
+isFramebuffer:  GLboolean gl.isFramebuffer(framebuffer);
+
+readPixels:  // WebGL1: 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, pixels); 
+readPixels:  
+readPixels:  // WebGL2: 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, GLintptr offset); 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, ArrayBufferView pixels, GLuint dstOffset);
+
+bindRenderbuffer:  void gl.bindRenderbuffer(target, renderbuffer);
+
+createRenderbuffer:  WebGLRenderbuffer gl.createRenderbuffer();
+
+deleteRenderbuffer:  void gl.deleteRenderbuffer(renderbuffer);
+
+getRenderbufferParameter:  any gl.getRenderbufferParameter(target, pname);
+
+isRenderbuffer:  GLboolean gl.isRenderbuffer(renderbuffer);
+
+renderbufferStorage:  void gl.renderbufferStorage(target, internalFormat, width, height);
+
+bindTexture:  void gl.bindTexture(target, texture);
+
+compressedTexImage2D:  // WebGL 1:
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border, ArrayBufferView? pixels);
+compressedTexImage2D:  
+compressedTexImage2D:  // Additionally available in WebGL 2: 
+compressedTexImage2D:  // read from buffer bound to gl.PIXEL_UNPACK_BUFFER
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border, GLsizei imageSize, GLintptr offset); 
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border,
+compressedTexImage2D:                               ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+compressedTexImage2D:  
+compressedTexImage2D:   // read from buffer bound to gl.PIXEL_UNPACK_BUFFER
+compressedTexImage2D:  void gl.compressedTexImage3D(target, level, internalformat, width, height, depth, border, GLsizei imageSize, GLintptr offset); 
+compressedTexImage2D:  void gl.compressedTexImage3D(target, level, internalformat, width, height, depth, border, 
+compressedTexImage2D:                               ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+
+compressedTexSubImage2D:  // WebGL 1:
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, ArrayBufferView? pixels);
+compressedTexSubImage2D:  
+compressedTexSubImage2D:  // Additionally available in WebGL 2:
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, offset); 
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+
+copyTexImage2D:  void gl.copyTexImage2D(target, level, internalformat, x, y, width, height, border);
+
+copyTexSubImage2D:  void gl.copyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
+
+createTexture:  WebGLTexture gl.createTexture();
+
+deleteTexture:  void gl.deleteTexture(texture);
+
+generateMipmap:  void gl.generateMipmap(target);
+
+getTexParameter:  any gl.getTexParameter(target, pname);
+
+isTexture:  GLboolean gl.isTexture(texture);
+
+texImage2D:  // WebGL1:
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ArrayBufferView? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, ImageData? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLImageElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLCanvasElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLVideoElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, ImageBitmap? pixels);
+texImage2D:  
+texImage2D:  // WebGL2:
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, GLintptr offset);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLCanvasElement source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLImageElement source); 
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLVideoElement source); 
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ImageBitmap source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ImageData source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ArrayBufferView srcData, srcOffset);
+
+texSubImage2D:  // WebGL 1:
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ArrayBufferView? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, ImageData? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLImageElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLCanvasElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLVideoElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, ImageBitmap? pixels);
+texSubImage2D:  
+texSubImage2D:  // WebGL 2:
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, GLintptr offset);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLCanvasElement source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLImageElement source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLVideoElement source); 
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ImageBitmap source); 
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ImageData source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ArrayBufferView srcData, srcOffset);
+
+texParameter:  void gl.texParameterf(GLenum target, GLenum pname, GLfloat param);
+texParameter:  void gl.texParameteri(GLenum target, GLenum pname, GLint param);
+
+texParameter:  void gl.texParameterf(GLenum target, GLenum pname, GLfloat param);
+texParameter:  void gl.texParameteri(GLenum target, GLenum pname, GLint param);
+
+attachShader:  void gl.attachShader(program, shader);
+
+bindAttribLocation:  void gl.bindAttribLocation(program, index, name);
+
+compileShader:  void gl.compileShader(shader);
+
+createProgram:  WebGLProgram gl.createProgram();
+
+createShader:  WebGLShader gl.createShader(type);
+
+deleteProgram:  void gl.deleteProgram(program);
+
+deleteShader:  void gl.deleteShader(shader);
+
+detachShader:  void gl.detachShader(program, shader);
+
+getAttachedShaders:  sequence<WebGLShader> gl.getAttachedShaders(program);
+
+getProgramParameter:  any gl.getProgramParameter(program, pname);
+
+getProgramInfoLog:  gl.getProgramInfoLog(program);
+
+getShaderParameter:  any gl.getShaderParameter(shader, pname);
+
+getShaderPrecisionFormat:  WebGLShaderPrecisionFormat gl.getShaderPrecisionFormat(shaderType, precisionType);
+
+getShaderInfoLog:  gl.getShaderInfoLog(shader);
+
+getShaderSource:  DOMString gl.getShaderSource(shader);
+
+isProgram:  GLboolean gl.isProgram(program);
+
+isShader:  GLboolean gl.isShader(shader);
+
+linkProgram:  void gl.linkProgram(program);
+
+shaderSource:  void gl.shaderSource(shader, source);
+
+useProgram:  void gl.useProgram(program);
+
+validateProgram:  void gl.validateProgram(program);
+
+disableVertexAttribArray:  void gl.disableVertexAttribArray(index);
+
+enableVertexAttribArray:  void gl.enableVertexAttribArray(index);
+
+getActiveAttrib:  WebGLActiveInfo gl.getActiveAttrib(program,index);
+
+getActiveUniform:  WebGLActiveInfo WebGLRenderingContext.getActiveUniform(program, index);
+
+getAttribLocation:  GLint gl.getAttribLocation(program, name);
+
+getUniform:  any gl.getUniform(program, location);
+
+getUniformLocation:  WebGLUniformLocation = WebGLRenderingContext.getUniformLocation(program, name);
+
+getVertexAttrib:  any gl.getVertexAttrib(index, pname);
+
+getVertexAttribOffset:  GLintptr gl.getVertexAttribOffset(index, pname);
+
+uniform:  void gl.uniform1f(location, v0);
+uniform:  void gl.uniform1fv(location, value);
+uniform:  void gl.uniform1i(location, v0);
+uniform:  void gl.uniform1iv(location, value);
+uniform:  
+uniform:  void gl.uniform2f(location, v0, v1);
+uniform:  void gl.uniform2fv(location, value);
+uniform:  void gl.uniform2i(location, v0, v1);
+uniform:  void gl.uniform2iv(location, value);
+uniform:  
+uniform:  void gl.uniform3f(location, v0, v1, v2);
+uniform:  void gl.uniform3fv(location, value);
+uniform:  void gl.uniform3i(location, v0, v1, v2);
+uniform:  void gl.uniform3iv(location, value);
+uniform:  
+uniform:  void gl.uniform4f(location, v0, v1, v2, v3);
+uniform:  void gl.uniform4fv(location, value);
+uniform:  void gl.uniform4i(location, v0, v1, v2, v3);
+uniform:  void gl.uniform4iv(location, value);
+
+uniformMatrix:  WebGLRenderingContext.uniformMatrix2fv(location, transpose, value);
+uniformMatrix:  WebGLRenderingContext.uniformMatrix3fv(location, transpose, value);
+uniformMatrix:  WebGLRenderingContext.uniformMatrix4fv(location, transpose, value);
+
+vertexAttrib:  void gl.vertexAttrib1f(index, v0);
+vertexAttrib:  void gl.vertexAttrib2f(index, v0, v1);
+vertexAttrib:  void gl.vertexAttrib3f(index, v0, v1, v2);
+vertexAttrib:  void gl.vertexAttrib4f(index, v0, v1, v2, v3);
+vertexAttrib:  
+vertexAttrib:  void gl.vertexAttrib1fv(index, value);
+vertexAttrib:  void gl.vertexAttrib2fv(index, value);
+vertexAttrib:  void gl.vertexAttrib3fv(index, value);
+vertexAttrib:  void gl.vertexAttrib4fv(index, value);
+
+vertexAttribPointer:  void gl.vertexAttribPointer(index, size, type, normalized, stride, offset);
+
+clear:  void gl.clear(mask);
+
+drawArrays:  void gl.drawArrays(mode, first, count);
+
+drawElements:  void gl.drawElements(mode, count, type, offset);
+
+finish:  void gl.finish();
+
+flush:  void gl.flush();
+
+getSupportedExtensions:  gl.getSupportedExtensions();
+
+getExtension:  gl.getExtension(name);
+
+scissor:  void gl.scissor(x, y, width, height);
+
+clear:  void gl.clear(mask);
+
+scissor:  void gl.scissor(x, y, width, height);
+
+clear:  void gl.clear(mask);
+
+canvas:  ctx.canvas;
+
+drawingBufferHeight:  gl.drawingBufferHeight;
+
+drawingBufferWidth:  gl.drawingBufferWidth;
+
+activeTexture:  void gl.activeTexture(texture);
+
+attachShader:  void gl.attachShader(program, shader);
+
+bindAttribLocation:  void gl.bindAttribLocation(program, index, name);
+
+bindBuffer:  void gl.bindBuffer(target, buffer);
+
+bindFramebuffer:  void gl.bindFramebuffer(target, framebuffer);
+
+bindRenderbuffer:  void gl.bindRenderbuffer(target, renderbuffer);
+
+bindTexture:  void gl.bindTexture(target, texture);
+
+blendColor:  void gl.blendColor(red, green, blue, alpha);
+
+blendEquation:  void gl.blendEquation(mode);
+
+blendEquationSeparate:  void gl.blendEquationSeparate(modeRGB, modeAlpha);
+
+blendFunc:  void gl.blendFunc(sfactor, dfactor);
+
+blendFuncSeparate:  void gl.blendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
+
+bufferData:  // WebGL1: 
+bufferData:  void gl.bufferData(target, size, usage); 
+bufferData:  void gl.bufferData(target, ArrayBuffer? srcData, usage); 
+bufferData:  void gl.bufferData(target, ArrayBufferView srcData, usage); 
+bufferData:  
+bufferData:  // WebGL2: 
+bufferData:  void gl.bufferData(target, ArrayBufferView srcData, usage, srcOffset, length);
+
+bufferSubData:  // WebGL1: 
+bufferSubData:  void gl.bufferSubData(target, offset, ArrayBuffer srcData); 
+bufferSubData:  void gl.bufferSubData(target, offset, ArrayBufferView srcData); 
+bufferSubData:  
+bufferSubData:  // WebGL2: 
+bufferSubData:  void gl.bufferSubData(target, dstByteOffset, ArrayBufferView srcData, srcOffset, length);
+
+checkFramebufferStatus:  GLenum gl.checkFramebufferStatus(target);
+
+clear:  void gl.clear(mask);
+
+clearColor:  void gl.clearColor(red, green, blue, alpha);
+
+clearDepth:  void gl.clearDepth(depth);
+
+clearStencil:  void gl.clearStencil(s);
+
+colorMask:  void gl.colorMask(red, green, blue, alpha);
+
+commit:  void WebGLRenderingContext.commit()
+
+compileShader:  void gl.compileShader(shader);
+
+compressedTexImage2D:  // WebGL 1:
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border, ArrayBufferView? pixels);
+compressedTexImage2D:  
+compressedTexImage2D:  // Additionally available in WebGL 2: 
+compressedTexImage2D:  // read from buffer bound to gl.PIXEL_UNPACK_BUFFER
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border, GLsizei imageSize, GLintptr offset); 
+compressedTexImage2D:  void gl.compressedTexImage2D(target, level, internalformat, width, height, border,
+compressedTexImage2D:                               ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+compressedTexImage2D:  
+compressedTexImage2D:   // read from buffer bound to gl.PIXEL_UNPACK_BUFFER
+compressedTexImage2D:  void gl.compressedTexImage3D(target, level, internalformat, width, height, depth, border, GLsizei imageSize, GLintptr offset); 
+compressedTexImage2D:  void gl.compressedTexImage3D(target, level, internalformat, width, height, depth, border, 
+compressedTexImage2D:                               ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+
+compressedTexSubImage2D:  // WebGL 1:
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, ArrayBufferView? pixels);
+compressedTexSubImage2D:  
+compressedTexSubImage2D:  // Additionally available in WebGL 2:
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, offset); 
+compressedTexSubImage2D:  void gl.compressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, ArrayBufferView srcData, optional srcOffset, optional srcLengthOverride);
+
+copyTexImage2D:  void gl.copyTexImage2D(target, level, internalformat, x, y, width, height, border);
+
+copyTexSubImage2D:  void gl.copyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
+
+createBuffer:  WebGLBuffer gl.createBuffer();
+
+createFramebuffer:  WebGLFramebuffer gl.createFramebuffer();
+
+createProgram:  WebGLProgram gl.createProgram();
+
+createRenderbuffer:  WebGLRenderbuffer gl.createRenderbuffer();
+
+createShader:  WebGLShader gl.createShader(type);
+
+createTexture:  WebGLTexture gl.createTexture();
+
+cullFace:  void gl.cullFace(mode);
+
+deleteBuffer:  void gl.deleteBuffer(buffer);
+
+deleteFramebuffer:  void gl.deleteFramebuffer(framebuffer);
+
+deleteProgram:  void gl.deleteProgram(program);
+
+deleteRenderbuffer:  void gl.deleteRenderbuffer(renderbuffer);
+
+deleteShader:  void gl.deleteShader(shader);
+
+deleteTexture:  void gl.deleteTexture(texture);
+
+depthFunc:  void gl.depthFunc(func);
+
+depthMask:  void gl.depthMask(flag);
+
+depthRange:  void gl.depthRange(zNear, zFar);
+
+detachShader:  void gl.detachShader(program, shader);
+
+disable:  void gl.disable(cap);
+
+disableVertexAttribArray:  void gl.disableVertexAttribArray(index);
+
+drawArrays:  void gl.drawArrays(mode, first, count);
+
+drawElements:  void gl.drawElements(mode, count, type, offset);
+
+enable:  void gl.enable(cap);
+
+enableVertexAttribArray:  void gl.enableVertexAttribArray(index);
+
+finish:  void gl.finish();
+
+flush:  void gl.flush();
+
+framebufferRenderbuffer:  void gl.framebufferRenderbuffer(target, attachment, renderbuffertarget, renderbuffer);
+
+framebufferTexture2D:  void gl.framebufferTexture2D(target, attachment, textarget, texture, level);
+
+frontFace:  void gl.frontFace(mode);
+
+generateMipmap:  void gl.generateMipmap(target);
+
+getActiveAttrib:  WebGLActiveInfo gl.getActiveAttrib(program,index);
+
+getActiveUniform:  WebGLActiveInfo WebGLRenderingContext.getActiveUniform(program, index);
+
+getAttachedShaders:  sequence<WebGLShader> gl.getAttachedShaders(program);
+
+getAttribLocation:  GLint gl.getAttribLocation(program, name);
+
+getBufferParameter:  any gl.getBufferParameter(target, pname);
+
+getContextAttributes:  gl.getContextAttributes();
+
+getError:  GLenum gl.getError();
+
+getExtension:  gl.getExtension(name);
+
+getFramebufferAttachmentParameter:  any gl.getFramebufferAttachmentParameter(target, attachment, pname);
+
+getParameter:  any gl.getParameter(pname);
+
+getProgramInfoLog:  gl.getProgramInfoLog(program);
+
+getProgramParameter:  any gl.getProgramParameter(program, pname);
+
+getRenderbufferParameter:  any gl.getRenderbufferParameter(target, pname);
+
+getShaderInfoLog:  gl.getShaderInfoLog(shader);
+
+getShaderParameter:  any gl.getShaderParameter(shader, pname);
+
+getShaderPrecisionFormat:  WebGLShaderPrecisionFormat gl.getShaderPrecisionFormat(shaderType, precisionType);
+
+getShaderSource:  DOMString gl.getShaderSource(shader);
+
+getSupportedExtensions:  gl.getSupportedExtensions();
+
+getTexParameter:  any gl.getTexParameter(target, pname);
+
+getUniform:  any gl.getUniform(program, location);
+
+getUniformLocation:  WebGLUniformLocation = WebGLRenderingContext.getUniformLocation(program, name);
+
+getVertexAttrib:  any gl.getVertexAttrib(index, pname);
+
+getVertexAttribOffset:  GLintptr gl.getVertexAttribOffset(index, pname);
+
+hint:  void gl.hint(target, mode);
+
+isBuffer:  GLboolean gl.isBuffer(buffer);
+
+isContextLost:  gl.isContextLost();
+
+isEnabled:  GLboolean gl.isEnabled(cap);
+
+isFramebuffer:  GLboolean gl.isFramebuffer(framebuffer);
+
+isProgram:  GLboolean gl.isProgram(program);
+
+isRenderbuffer:  GLboolean gl.isRenderbuffer(renderbuffer);
+
+isShader:  GLboolean gl.isShader(shader);
+
+isTexture:  GLboolean gl.isTexture(texture);
+
+lineWidth:  ctx.lineWidth = value;
+
+linkProgram:  void gl.linkProgram(program);
+
+pixelStorei:  void gl.pixelStorei(pname, param);
+
+polygonOffset:  void gl.polygonOffset(factor, units);
+
+readPixels:  // WebGL1: 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, pixels); 
+readPixels:  
+readPixels:  // WebGL2: 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, GLintptr offset); 
+readPixels:  void gl.readPixels(x, y, width, height, format, type, ArrayBufferView pixels, GLuint dstOffset);
+
+renderbufferStorage:  void gl.renderbufferStorage(target, internalFormat, width, height);
+
+sampleCoverage:  void gl.sampleCoverage(value, invert);
+
+scissor:  void gl.scissor(x, y, width, height);
+
+shaderSource:  void gl.shaderSource(shader, source);
+
+stencilFunc:  void gl.stencilFunc(func, ref, mask);
+
+stencilFuncSeparate:  void gl.stencilFuncSeparate(face, func, ref, mask);
+
+stencilMask:  void gl.stencilMask(mask);
+
+stencilMaskSeparate:  void gl.stencilMaskSeparate(face, mask);
+
+stencilOp:  void gl.stencilOp(fail, zfail, zpass);
+
+stencilOpSeparate:  void gl.stencilOpSeparate(face, fail, zfail, zpass);
+
+texImage2D:  // WebGL1:
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ArrayBufferView? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, ImageData? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLImageElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLCanvasElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, HTMLVideoElement? pixels);
+texImage2D:  void gl.texImage2D(target, level, internalformat, format, type, ImageBitmap? pixels);
+texImage2D:  
+texImage2D:  // WebGL2:
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, GLintptr offset);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLCanvasElement source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLImageElement source); 
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, HTMLVideoElement source); 
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ImageBitmap source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ImageData source);
+texImage2D:  void gl.texImage2D(target, level, internalformat, width, height, border, format, type, ArrayBufferView srcData, srcOffset);
+
+texParameter:  void gl.texParameterf(GLenum target, GLenum pname, GLfloat param);
+texParameter:  void gl.texParameteri(GLenum target, GLenum pname, GLint param);
+
+texSubImage2D:  // WebGL 1:
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ArrayBufferView? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, ImageData? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLImageElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLCanvasElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, HTMLVideoElement? pixels);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, ImageBitmap? pixels);
+texSubImage2D:  
+texSubImage2D:  // WebGL 2:
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, format, type, GLintptr offset);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLCanvasElement source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLImageElement source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, HTMLVideoElement source); 
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ImageBitmap source); 
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ImageData source);
+texSubImage2D:  void gl.texSubImage2D(target, level, xoffset, yoffset, width, height, format, type, ArrayBufferView srcData, srcOffset);
+
+uniform:  void gl.uniform1f(location, v0);
+uniform:  void gl.uniform1fv(location, value);
+uniform:  void gl.uniform1i(location, v0);
+uniform:  void gl.uniform1iv(location, value);
+uniform:  
+uniform:  void gl.uniform2f(location, v0, v1);
+uniform:  void gl.uniform2fv(location, value);
+uniform:  void gl.uniform2i(location, v0, v1);
+uniform:  void gl.uniform2iv(location, value);
+uniform:  
+uniform:  void gl.uniform3f(location, v0, v1, v2);
+uniform:  void gl.uniform3fv(location, value);
+uniform:  void gl.uniform3i(location, v0, v1, v2);
+uniform:  void gl.uniform3iv(location, value);
+uniform:  
+uniform:  void gl.uniform4f(location, v0, v1, v2, v3);
+uniform:  void gl.uniform4fv(location, value);
+uniform:  void gl.uniform4i(location, v0, v1, v2, v3);
+uniform:  void gl.uniform4iv(location, value);
+
+uniformMatrix:  WebGLRenderingContext.uniformMatrix2fv(location, transpose, value);
+uniformMatrix:  WebGLRenderingContext.uniformMatrix3fv(location, transpose, value);
+uniformMatrix:  WebGLRenderingContext.uniformMatrix4fv(location, transpose, value);
+
+useProgram:  void gl.useProgram(program);
+
+validateProgram:  void gl.validateProgram(program);
+
+vertexAttrib:  void gl.vertexAttrib1f(index, v0);
+vertexAttrib:  void gl.vertexAttrib2f(index, v0, v1);
+vertexAttrib:  void gl.vertexAttrib3f(index, v0, v1, v2);
+vertexAttrib:  void gl.vertexAttrib4f(index, v0, v1, v2, v3);
+vertexAttrib:  
+vertexAttrib:  void gl.vertexAttrib1fv(index, value);
+vertexAttrib:  void gl.vertexAttrib2fv(index, value);
+vertexAttrib:  void gl.vertexAttrib3fv(index, value);
+vertexAttrib:  void gl.vertexAttrib4fv(index, value);
+
+vertexAttribPointer:  void gl.vertexAttribPointer(index, size, type, normalized, stride, offset);
+
+viewport:  void gl.viewport(x, y, width, height);
+
